@@ -1,50 +1,42 @@
-# Welcome to your Expo app 👋
+Notes App - Offline-First Draft Assistant
+A robust, offline-first notes application built with React Native (Expo). This app serves as a proof-of-concept for a draft message system, focusing on data persistence, performance with long notes, and a seamless auto-save experience.
+Click Here to Download the APK:
+Link: https://expo.dev/artifacts/eas/nUjvdGEw74FQxHjdxRx73o.apk
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Key Features:
+Offline-First Architecture: Full data persistence using AsyncStorage. No internet connection is required to create, edit, or delete notes.
+2-Second Auto-Save Heartbeat: A custom setInterval logic ensures that changes are saved every 2 seconds while the user is typing, preventing data loss even if the app is killed.
+Smart Timestamps: Dynamically tracks and displays "Created" vs "Modified" status.
+Created: Shown for new notes.
+Modified: Automatically replaces the created label as soon as a change is saved.
+Search & Filtering: Real-time search functionality to filter notes by title or content preview.
+Delete with Confirmation: A native safety alert to prevent accidental deletion of important notes.
+Performance Optimized: Handled edge cases for 5000+ word notes using optimized FlatList and useRef hooks to prevent unnecessary re-renders.
 
-## Get started
+Tech Stack:
+Framework: React Native (Expo)
+Navigation: React Navigation (Stack)
+Persistence: AsyncStorage
+Build Tool: EAS (Expo Application Services)
+Icons: Custom branded book icon
 
-1. Install dependencies
+Technical Implementation Details:
+1. The Auto-Save Logic
+Unlike traditional "debounce" functions that wait for the user to stop typing, this app uses a Heartbeat Mechanism. It checks for differences between the current text and the last saved version every 2000ms. If changes are detected, it triggers a background save to local storage.
+2. Offline Persistence
+Data is serialized to JSON and stored in the device's internal storage. This ensures that when the app is restarted, all notes are immediately restored to the state.
+3. Filename Casing & Build Stability
+Resolved inconsistent filename casing and project root issues to ensure successful CI/CD builds on Linux-based EAS servers.
 
-   ```bash
-   npm install
-   ```
+How to Run Locally:
+Clone the repository:
+git clone https://github.com/Abisha5823/offline-notes-app
+cd OfflineNotesApp
+Install dependencies:
+npm install
+Start the development server:
+npx expo start
+Run on a device:
+Scan the QR code using the Expo Go app (Android) or the Camera app (iOS).
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Developed by: Abisha B
