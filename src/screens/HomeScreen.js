@@ -1,12 +1,12 @@
 import { useMemo, useState } from "react";
 import {
-    Alert,
-    FlatList,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Alert,
+  FlatList,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function HomeScreen({ navigation, notes, setNotes }) {
@@ -74,6 +74,7 @@ export default function HomeScreen({ navigation, notes, setNotes }) {
     <View style={styles.container}>
       <TextInput
         placeholder="Search notes..."
+        placeholderTextColor="#999"
         style={styles.searchBar}
         onChangeText={setSearch}
       />
@@ -106,6 +107,7 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOpacity: 0.1,
     shadowRadius: 5,
+    color: "#000",
   },
   noteCard: {
     backgroundColor: "#fff",
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 2,
   },
-  noteTitle: { fontSize: 18, fontWeight: "bold", color: "#333" },
+  noteTitle: { fontSize: 18, fontWeight: "bold", color: "#444" },
   notePreview: { color: "#666", marginTop: 4, fontSize: 14 },
   timestamp: { fontSize: 11, color: "#999", marginTop: 10, fontWeight: "500" },
   deleteButton: { padding: 8, marginLeft: 10 },

@@ -74,6 +74,7 @@ export default function EditorScreen({ route, notes, setNotes }) {
       <TextInput
         style={styles.titleInput}
         placeholder="Title"
+        placeholderTextColor="#999"
         value={title}
         onChangeText={setTitle}
       />
@@ -81,6 +82,7 @@ export default function EditorScreen({ route, notes, setNotes }) {
         <TextInput
           style={styles.contentInput}
           placeholder="Start typing..."
+          placeholderTextColor="#999"
           multiline
           textAlignVertical="top"
           value={content}
@@ -94,6 +96,11 @@ export default function EditorScreen({ route, notes, setNotes }) {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 15, backgroundColor: "#fff" },
   status: { fontSize: 12, color: "#aaa", textAlign: "right", marginBottom: 5 },
-  titleInput: { fontSize: 24, fontWeight: "bold", marginBottom: 15 },
-  contentInput: { fontSize: 16, flex: 1, minHeight: 400 },
+  titleInput: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 15,
+    color: "#000",
+  },
+  contentInput: { fontSize: 16, flex: 1, minHeight: 400, color: "#000" },
 });
