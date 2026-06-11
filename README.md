@@ -1,104 +1,154 @@
-Notes App – Offline-First Draft Assistant
+# Notes App – Offline-First Draft Assistant
 
-A robust offline-first notes application built with React Native (Expo)
+**APK Download**:https://expo.dev/artifacts/eas/nUjvdGEw74FQxHjdxRx73o.apk
 
-Designed as a proof-of-concept draft message system
+## Project Overview
 
-Focuses on data persistence, performance with long notes, and seamless auto-save
+Developed an offline-first mobile notes application that allows users to create, edit, search, and manage notes without requiring an internet connection.
 
-APK Download:
-https://expo.dev/artifacts/eas/nUjvdGEw74FQxHjdxRx73o.apk
+The application was designed as a draft assistant system with a strong focus on data persistence, auto-save reliability, and smooth performance when handling large notes.
 
-Key Features
+## Problem Statement
 
-Offline-First Architecture
+Many note-taking applications rely heavily on internet connectivity or risk losing user data when applications are closed unexpectedly.
 
-Full data persistence using AsyncStorage
+The goal of this project was to create a lightweight and reliable note management solution that:
 
-No internet required to create, edit, or delete notes
+* Works completely offline
+* Automatically saves user progress
+* Minimizes risk of data loss
+* Maintains performance for large notes
 
-2-Second Auto-Save Heartbeat
+## Solution
 
-Custom setInterval logic saves data every 2 seconds while typing
+Built a React Native mobile application with local storage persistence and automatic save functionality.
 
-Prevents data loss even if the app is force-closed
+The application continuously monitors changes and stores note data locally, ensuring users can access their notes even without network connectivity.
 
-Smart Timestamps
+## Key Features
 
-Automatically tracks note status
+### Offline-First Architecture
 
-Displays Created for new notes
+* No internet connection required
+* Create, edit, and delete notes locally
+* Persistent storage across app restarts
 
-Updates to Modified when changes are saved
+### Auto-Save Mechanism
 
-Search & Filtering
+* Automatic save every 2 seconds while editing
+* Prevents accidental data loss
+* Detects changes before saving
 
-Real-time search by note title or content preview
+### Smart Note Tracking
 
-Delete with Confirmation
+* Created timestamp for new notes
+* Modified timestamp for updated notes
+* Automatic status updates
 
-Native alert dialog to avoid accidental deletions
+### Search Functionality
 
-Performance Optimized
+* Real-time note filtering
+* Search by title or content
+* Instant result updates
 
-Handles 5000+ word notes efficiently
+### Safe Deletion
 
-Uses optimized FlatList and useRef to reduce unnecessary re-renders
+* Confirmation dialog before deletion
+* Prevents accidental note removal
 
-Tech Stack
+### Performance Optimization
 
-Framework: React Native (Expo)
+* Efficient rendering for large notes
+* Optimized list management
+* Reduced unnecessary re-renders
 
-Navigation: React Navigation (Stack)
+## My Responsibilities
 
-Persistence: AsyncStorage
+* Application architecture design
+* UI development
+* State management implementation
+* Offline storage integration
+* Auto-save workflow development
+* Performance optimization
+* Testing and debugging
+* Build and deployment configuration
 
-Build Tool: EAS (Expo Application Services)
+## Tech Stack
 
-Icons: Custom branded book icon
+### Mobile Development
 
-Technical Implementation Details
+* React Native
+* Expo
 
-Auto-Save Logic
+### Navigation
 
-Uses a heartbeat mechanism instead of debounce
+* React Navigation
 
-Compares current text with last saved version every 2000ms
+### Data Storage
 
-Saves only when changes are detected
+* AsyncStorage
 
-Offline Persistence
+### Build & Deployment
 
-Notes are serialized to JSON
+* Expo Application Services (EAS)
 
-Stored in device internal storage
+### Development Tools
 
-Automatically restored on app restart
+* JavaScript
+* Git
+* GitHub
 
-Build Stability
+## System Architecture
 
-Resolved filename casing and project root issues
+User
+↓
+React Native Application
+↓
+State Management
+↓
+AsyncStorage
+↓
+Persistent Local Storage
 
-Ensured successful CI/CD builds on Linux-based EAS servers
+## Technical Highlights
 
-How to Run Locally
+### Auto-Save Workflow
 
-Clone the repository
-git clone https://github.com/Abisha5823/offline-notes-app
+User Edits Note
+↓
+Change Detection
+↓
+2-Second Save Interval
+↓
+AsyncStorage Update
 
-Navigate to project
-cd OfflineNotesApp
+### Offline Persistence
 
-Install dependencies
-npm install
+* Notes serialized into JSON format
+* Stored locally on device
+* Automatically restored on application launch
 
-Start development server
-npx expo start
+## Challenges Faced
 
-Run on device
+* Preventing data loss during editing
+* Managing large note performance
+* Reducing unnecessary component re-renders
+* Ensuring stable mobile builds across environments
 
-Scan QR using Expo Go (Android) or Camera app (iOS)
+## Outcomes
 
-Developed By
+* Successfully developed a fully offline mobile notes application
+* Implemented reliable auto-save functionality
+* Achieved smooth performance for long-form note editing
+* Delivered a stable Android build using Expo EAS
 
-Abisha B
+## Skills Demonstrated
+
+* React Native Development
+* Mobile Application Development
+* Local Data Persistence
+* State Management
+* Performance Optimization
+* Offline-First Architecture
+* Testing & Debugging
+* Build & Deployment
